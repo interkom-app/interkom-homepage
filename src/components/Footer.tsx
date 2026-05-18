@@ -6,9 +6,9 @@ export function Footer() {
       <div className="hairline mb-10" />
       <div className="grid items-end gap-10 md:grid-cols-12">
         <div className="md:col-span-6">
-          <Wordmark className="text-[2.2rem]" />
-          <p className="mt-4 max-w-[22rem] font-display text-[20px] italic leading-tight text-(--color-ink-soft)">
-            A workplace that remembers it has people in it.
+          <Wordmark size="lg" />
+          <p className="mt-5 max-w-[24rem] font-mono text-[12px] uppercase leading-relaxed tracking-[0.16em] text-(--color-ink-soft)">
+            // a private network for your company.
           </p>
         </div>
 
@@ -19,8 +19,8 @@ export function Footer() {
             ['Elsewhere', ['Mail', 'Mastodon', 'GitHub']],
           ].map(([heading, items]) => (
             <div key={heading as string}>
-              <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-(--color-ink-mute)">{heading}</div>
-              <ul className="mt-3 space-y-2">
+              <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-(--color-ink-mute)">// {heading}</div>
+              <ul className="mt-3 space-y-2 font-mono text-[12px]">
                 {(items as string[]).map((i) => (
                   <li key={i}>
                     <a href="#" className="text-(--color-ink-soft) hover:text-(--color-ink)">{i}</a>
@@ -33,7 +33,7 @@ export function Footer() {
       </div>
 
       <div className="mt-14 flex flex-wrap items-center justify-between gap-3 border-t border-(--color-paper-line) pt-6 font-mono text-[10px] uppercase tracking-[0.18em] text-(--color-ink-mute)">
-        <div>© {new Date().getFullYear()} Span Labs · Made on a quiet afternoon</div>
+        <div>© {new Date().getFullYear()} Span Labs · build 240518</div>
         <div className="flex items-center gap-5">
           <a href="#" className="hover:text-(--color-ink)">Privacy</a>
           <a href="#" className="hover:text-(--color-ink)">Terms</a>

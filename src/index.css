@@ -1,24 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-  /* Paper-cream surface, warm ink, surgical accents */
-  --color-paper: #F5F1EA;
-  --color-paper-shadow: #ECE4D3;
-  --color-paper-line: #E3DBC8;
-  --color-ink: #1A1814;
-  --color-ink-soft: #4A4641;
-  --color-ink-mute: #8A8478;
-  --color-violet: #5B52F0;
-  --color-violet-soft: #948CFA;
-  --color-coral: #F76A78;
-  --color-amber: #F5B544;
-  --color-cyan: #2BB3C7;
+  /* Black surface / pearl ink — token names preserved for compatibility */
+  --color-paper: #0A0A0A;          /* page bg */
+  --color-paper-shadow: #121212;   /* elevated surface */
+  --color-paper-line: #1F1F1F;     /* hairlines / dividers */
+  --color-paper-edge: #2A2A2A;     /* stronger borders */
 
-  --font-display: "Instrument Serif", "Times New Roman", serif;
+  --color-ink: #F4F4F4;            /* primary text — pearl */
+  --color-ink-soft: #A3A3A3;       /* secondary text */
+  --color-ink-mute: #6A6A6A;       /* tertiary / labels */
+
+  /* Accents — restrained, signal-grade */
+  --color-violet: #7E76FF;
+  --color-violet-soft: #B5AFFF;
+  --color-coral: #FF6B7A;
+  --color-amber: #F5B544;
+  --color-cyan: #4677FE;
+  --color-green: #3CB876;
+
+  /* Type — promote Geist Mono to signature voice */
+  --font-display: "Geist", system-ui, sans-serif;
   --font-sans: "Geist", system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
 
-  --radius-card: 18px;
+  --radius-card: 4px;
 }
 
 html, body, #root {
@@ -30,24 +36,77 @@ html, body, #root {
   text-rendering: optimizeLegibility;
 }
 
-/* Subtle paper grain — a layered noise via SVG data URI, low opacity. */
+/* Dot-grid backdrop — echoes the app icon's sensor pattern */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.07 0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  opacity: 0.45;
-  mix-blend-mode: multiply;
+  background-image: radial-gradient(circle at center, #2A2A2A 1px, transparent 1.2px);
+  background-size: 28px 28px;
+  background-position: 0 0;
+  mask-image: radial-gradient(ellipse at center, black 0%, black 55%, transparent 92%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 0%, black 55%, transparent 92%);
+  opacity: 0.55;
 }
 
-.font-display { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em; }
+/* Subtle film grain on top */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.5;
+  mix-blend-mode: screen;
+}
+
+.font-display { font-family: var(--font-display); letter-spacing: -0.025em; font-weight: 500; }
 .font-mono    { font-family: var(--font-mono); }
 
-/* Tiny decorative tools */
+/* Hairlines / technical decoration */
 .hairline { background: var(--color-paper-line); height: 1px; }
 
+.grid-bg {
+  background-image:
+    linear-gradient(var(--color-paper-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-paper-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Inline "code tag" — used as accent for keywords in headlines */
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.5em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-paper-edge);
+  border-radius: 3px;
+  padding: 0.3em 0.55em;
+  vertical-align: 0.18em;
+  color: var(--color-ink);
+  background: var(--color-paper-shadow);
+}
+
+/* Bracketed mono accent */
+.bracket::before { content: "["; color: var(--color-ink-mute); margin-right: 0.05em; }
+.bracket::after  { content: "]"; color: var(--color-ink-mute); margin-left: 0.05em; }
+
+/* Crosshair corner marker */
+.cross-corner {
+  position: absolute;
+  width: 10px; height: 10px;
+  border-color: var(--color-ink-mute);
+}
+.cross-corner::before, .cross-corner::after {
+  content: ""; position: absolute; background: var(--color-ink-mute);
+}
+.cross-corner::before { left: 0; right: 0; top: 50%; height: 1px; transform: translateY(-50%); }
+.cross-corner::after  { top: 0; bottom: 0; left: 50%; width: 1px; transform: translateX(-50%); }
+
+/* Animations */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -60,20 +119,25 @@ body::before {
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-6px); }
 }
-@keyframes ringspin {
-  to { transform: rotate(360deg); }
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 24px rgba(255,255,255,0.05)) drop-shadow(0 0 60px rgba(126,118,255,0.18)); }
+  50%      { filter: drop-shadow(0 0 32px rgba(255,255,255,0.10)) drop-shadow(0 0 80px rgba(126,118,255,0.32)); }
 }
 @keyframes typing {
   0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
   30%           { transform: translateY(-3px); opacity: 1; }
 }
+@keyframes scan {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(2200%); }
+}
 
-.reveal { opacity: 0; animation: fade-up 900ms cubic-bezier(.2,.7,.2,1) forwards; }
+.reveal      { opacity: 0; animation: fade-up 900ms cubic-bezier(.2,.7,.2,1) forwards; }
 .reveal-slow { opacity: 0; animation: fade-up 1200ms cubic-bezier(.2,.7,.2,1) forwards; }
 .reveal-fade { opacity: 0; animation: fade-in 1400ms ease forwards; }
 
-/* Phone mock drift */
 .drift { animation: drift 7s ease-in-out infinite; }
+.glow  { animation: glow 6s ease-in-out infinite; }
 
 /* Marquee */
 @keyframes marquee {
@@ -82,13 +146,19 @@ body::before {
 }
 .marquee-track { animation: marquee 38s linear infinite; }
 
-/* Story ring gradient (matches iOS Theme.storyRingColors) */
+/* Story ring gradient (kept for the iOS phone mock) */
 .ring-story {
-  background: conic-gradient(from 210deg, #FCB546, #F76A78, #9E52F7, #4677FE, #FCB546);
+  background: conic-gradient(from 210deg, #FCB546, #FF6B7A, #9E52F7, #4677FE, #FCB546);
 }
 .ring-company {
-  background: conic-gradient(from 210deg, #5B52F0, #4677FE, #2BB3C7, #5B52F0);
+  background: conic-gradient(from 210deg, #7E76FF, #4677FE, #2BB3C7, #7E76FF);
 }
 
 /* Selection */
 ::selection { background: var(--color-violet); color: #fff; }
+
+/* Subtle scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-paper); }
+::-webkit-scrollbar-thumb { background: var(--color-paper-edge); border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-ink-mute); }

@@ -2,7 +2,6 @@ export function Identity() {
   return (
     <section id="identity" className="relative mx-auto max-w-[1240px] px-6 py-28 md:px-10">
       <div className="grid items-center gap-12 md:grid-cols-12">
-        {/* Visual */}
         <div className="md:col-span-6 order-2 md:order-1">
           <div className="relative h-[440px]">
             <IdentityCard
@@ -12,7 +11,7 @@ export function Identity() {
               role="Engineering · she/her"
               handle="@maya"
               monogram="MR"
-              tone="work"
+              tint="#7E76FF"
               presence="online"
               style={{ top: 0, left: 0, transform: 'rotate(-3deg)' }}
             />
@@ -23,7 +22,7 @@ export function Identity() {
               role="just here for the photos"
               handle="@mreyes"
               monogram="m"
-              tone="play"
+              tint="#FF6B7A"
               presence="quiet"
               style={{ top: 180, left: 80, transform: 'rotate(2.5deg)' }}
             />
@@ -34,37 +33,35 @@ export function Identity() {
               role="Contract · weekends only"
               handle="@maya.r"
               monogram="M"
-              tone="muted"
+              tint="#2BB3C7"
               presence="away"
               style={{ top: 320, left: 20, transform: 'rotate(-1.5deg)' }}
             />
           </div>
         </div>
 
-        {/* Copy */}
         <div className="md:col-span-6 order-1 md:order-2">
           <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-(--color-ink-mute)">
-            (07) — Per-workspace profiles
+            // SEC.07 · per-workspace profiles
           </div>
-          <h2 className="mt-4 font-display text-[44px] leading-[1] tracking-tight md:text-[64px]">
-            A different <em className="font-display italic text-(--color-violet)">you</em>
-            <br />
+          <h2 className="mt-4 font-display text-[40px] font-medium leading-[1] tracking-[-0.03em] md:text-[60px]">
+            A different <span className="text-(--color-violet)">you</span><br />
             at every workspace.
           </h2>
-          <p className="mt-7 max-w-[34rem] text-[16px] leading-[1.6] text-(--color-ink-soft)">
+          <p className="mt-7 max-w-[34rem] text-[15px] leading-[1.6] text-(--color-ink-soft)">
             You aren't the same person at your day job, your weekend studio, and the
             group chat that's somehow still going from college. Span knows that. Pick a
             different name, photo, and handle at each workspace — no more
             corporate-headshot-meets-friend-group energy.
           </p>
-          <p className="mt-5 max-w-[32rem] text-[15px] leading-[1.6] text-(--color-ink-soft)">
+          <p className="mt-5 max-w-[32rem] text-[14.5px] leading-[1.6] text-(--color-ink-soft)">
             Switch between them like rooms in a house. Your status, your inbox, even
             your pronouns travel with the door — never with the rest of you.
           </p>
 
           <div className="mt-8 inline-flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.18em] text-(--color-ink-mute)">
-            <span className="inline-block h-[6px] w-[6px] rounded-full bg-(--color-onlineDot, #3CB876)" style={{ background: '#3CB876' }} />
-            <span>One login. Every workspace. Different faces.</span>
+            <span className="inline-block h-[6px] w-[6px] rounded-full" style={{ background: '#3CB876', boxShadow: '0 0 8px #3CB87680' }} />
+            <span>one login · every workspace · different faces</span>
           </div>
         </div>
       </div>
@@ -79,7 +76,7 @@ function IdentityCard({
   role,
   handle,
   monogram,
-  tone,
+  tint,
   presence,
   style,
 }: {
@@ -89,32 +86,22 @@ function IdentityCard({
   role: string
   handle: string
   monogram: string
-  tone: 'work' | 'play' | 'muted'
+  tint: string
   presence: 'online' | 'quiet' | 'away'
   style?: React.CSSProperties
 }) {
-  const tints = {
-    work: { bg: '#5B52F0', text: '#fff' },
-    play: { bg: '#F76A78', text: '#fff' },
-    muted: { bg: '#2BB3C7', text: '#fff' },
-  }[tone]
-
-  const dot = {
-    online: '#3CB876',
-    quiet: '#F5B544',
-    away: '#8A8478',
-  }[presence]
+  const dot = { online: '#3CB876', quiet: '#F5B544', away: '#6A6A6A' }[presence]
 
   return (
     <article
-      className="absolute w-[320px] rounded-2xl border border-(--color-paper-line) bg-(--color-paper) p-5 shadow-[0_30px_70px_-35px_rgba(26,24,20,0.35)] transition-transform hover:-translate-y-1"
-      style={style}
+      className="absolute w-[320px] border border-(--color-paper-edge) p-5 shadow-[0_30px_70px_-30px_rgba(0,0,0,0.7)] transition-transform hover:-translate-y-1"
+      style={{ background: '#0F0F0F', ...style }}
     >
       <div className="flex items-center justify-between">
         <div className="font-mono text-[9.5px] uppercase tracking-[0.18em] text-(--color-ink-mute)">
           {slug}
         </div>
-        <div className="flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-[0.16em] text-(--color-ink-mute)">
+        <div className="flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-[0.16em] text-(--color-ink-soft)">
           <span className="inline-block h-[6px] w-[6px] rounded-full" style={{ background: dot }} />
           <span>{presence}</span>
         </div>
@@ -122,13 +109,13 @@ function IdentityCard({
 
       <div className="mt-4 flex items-center gap-3">
         <div
-          className="grid h-12 w-12 place-items-center rounded-xl font-display text-[17px]"
-          style={{ background: tints.bg, color: tints.text }}
+          className="grid h-12 w-12 place-items-center font-mono text-[16px] font-semibold text-(--color-paper)"
+          style={{ background: tint }}
         >
           {monogram}
         </div>
         <div className="min-w-0">
-          <div className="truncate font-display text-[18px] leading-tight">{name}</div>
+          <div className="truncate font-display text-[17px] font-medium leading-tight tracking-[-0.02em]">{name}</div>
           <div className="truncate font-mono text-[10px] uppercase tracking-[0.14em] text-(--color-ink-mute)">
             {handle} · {workspace}
           </div>

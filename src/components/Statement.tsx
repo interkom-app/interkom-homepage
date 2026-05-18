@@ -4,38 +4,36 @@ export function Statement() {
       <div className="grid items-start gap-10 md:grid-cols-12">
         <aside className="md:col-span-3">
           <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-(--color-ink-mute)">
-            (Position)
+            // POSITION
           </div>
-          <div className="mt-3 font-mono text-[10.5px] leading-[1.7] uppercase tracking-[0.14em] text-(--color-ink-soft)">
-            Private<br />
-            ·<br />
-            Workspace-scoped<br />
-            ·<br />
-            People you actually know
-          </div>
+          <ul className="mt-4 space-y-2 font-mono text-[10.5px] uppercase leading-relaxed tracking-[0.14em] text-(--color-ink-soft)">
+            <li>· workspace-scoped</li>
+            <li>· no public feed</li>
+            <li>· no strangers</li>
+            <li>· people you actually know</li>
+          </ul>
         </aside>
 
         <div className="md:col-span-9">
-          <p className="font-display text-[40px] leading-[1.05] tracking-[-0.01em] text-(--color-ink) sm:text-[52px] md:text-[64px] lg:text-[72px]">
-            Think of it as a{' '}
-            <em className="font-display italic text-(--color-violet)">private social network</em>{' '}
-            inside your company —
-            <span className="text-(--color-ink-mute)"> not </span>
-            <s className="decoration-(--color-coral) decoration-[3px] underline-offset-4">
+          <p className="font-display text-[36px] font-medium leading-[1.08] tracking-[-0.03em] text-(--color-ink-soft) sm:text-[48px] md:text-[60px] lg:text-[68px]">
+            <span className="text-(--color-ink)">Think of it as a private network</span>{' '}
+            running <span className="text-(--color-ink)">inside your company</span> —
+            not{' '}
+            <s className="text-(--color-ink-mute) decoration-(--color-coral) decoration-[3px] underline-offset-4">
               a feed for the whole internet
             </s>
-            <span className="text-(--color-ink-mute)">,</span>{' '}
-            <em className="font-display italic text-(--color-coral)">just for the people you work with.</em>
+            ,{' '}
+            <span className="text-(--color-ink)">just for the people you work with</span>.
           </p>
 
-          <div className="mt-10 grid gap-6 border-t border-(--color-paper-line) pt-6 sm:grid-cols-3">
+          <div className="mt-12 grid gap-6 border-t border-(--color-paper-line) pt-6 sm:grid-cols-3">
             {[
-              ['no strangers', 'workspace-scoped — only invited teammates see anything.'],
-              ['no algorithm', 'stories show up in time order. that’s it.'],
-              ['no audience', 'nothing leaves the company. ever.'],
+              ['NO STRANGERS', 'workspace-scoped — only invited teammates see anything.'],
+              ['NO ALGORITHM', 'stories show up in time order. that’s it.'],
+              ['NO AUDIENCE', 'nothing leaves the company. ever.'],
             ].map(([k, v]) => (
-              <div key={k}>
-                <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-(--color-ink-mute)">
+              <div key={k} className="border-l border-(--color-paper-line) pl-4 first:border-l-0 first:pl-0">
+                <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-(--color-ink)">
                   {k}
                 </div>
                 <div className="mt-2 max-w-[20rem] text-[13.5px] leading-[1.55] text-(--color-ink-soft)">

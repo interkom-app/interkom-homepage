@@ -4,12 +4,12 @@ export function Notes() {
       <div className="grid gap-10 md:grid-cols-12">
         <div className="md:col-span-4">
           <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-(--color-ink-mute)">
-            (08) — Notes from the build
+            // SEC.08 · notes from the build
           </div>
-          <h2 className="mt-4 font-display text-[40px] leading-[1] tracking-tight md:text-[52px]">
-            A few small <em className="font-display italic text-(--color-violet)">opinions</em>.
+          <h2 className="mt-4 font-display text-[36px] font-medium leading-[1] tracking-[-0.03em] md:text-[48px]">
+            A few small <span className="text-(--color-violet)">opinions</span>.
           </h2>
-          <p className="mt-5 text-[14.5px] leading-[1.6] text-(--color-ink-soft)">
+          <p className="mt-5 text-[14px] leading-[1.6] text-(--color-ink-soft)">
             We're not trying to replace your tools. We're trying to make the parts of work
             that happen between them feel like something you'd actually want to use.
           </p>
@@ -43,14 +43,14 @@ export function Notes() {
               className="group grid grid-cols-[60px_1fr] items-baseline gap-6 border-t border-(--color-paper-line) py-7 first:border-t-0 md:grid-cols-[80px_1fr_auto]"
             >
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-(--color-ink-mute)">
-                ({n.n})
+                [{n.n}]
               </div>
               <div>
-                <div className="font-display text-[22px] leading-tight md:text-[26px]">{n.title}</div>
+                <div className="font-display text-[20px] font-medium leading-tight tracking-[-0.02em] md:text-[24px]">{n.title}</div>
                 <div className="mt-2 max-w-[40rem] text-[14px] leading-[1.6] text-(--color-ink-soft)">{n.body}</div>
               </div>
-              <div className="hidden font-mono text-[11px] text-(--color-ink-mute) transition-colors group-hover:text-(--color-coral) md:block">
-                ✺
+              <div className="hidden font-mono text-[11px] text-(--color-ink-mute) transition-colors group-hover:text-(--color-violet) md:block">
+                ◆
               </div>
             </li>
           ))}

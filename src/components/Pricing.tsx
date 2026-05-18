@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 type Plan = {
   name: string
-  italic: string
+  tagline: string
   blurb: string
   price: { annual: string; monthly: string } | { custom: true; label: string }
   cadence?: string
@@ -15,7 +15,7 @@ type Plan = {
 const plans: Plan[] = [
   {
     name: 'Solo',
-    italic: 'free, forever.',
+    tagline: 'FREE FOREVER',
     blurb: 'For the first five people. Real product, not a 90-day teaser.',
     price: { annual: '$0', monthly: '$0' },
     cadence: 'forever',
@@ -30,7 +30,7 @@ const plans: Plan[] = [
   },
   {
     name: 'Team',
-    italic: 'for the rest of you.',
+    tagline: 'STANDARD',
     blurb: 'The plan most teams land on. Roughly the price of a coffee per person.',
     price: { annual: '$5', monthly: '$6' },
     cadence: 'per teammate / month',
@@ -47,7 +47,7 @@ const plans: Plan[] = [
   },
   {
     name: 'Studio',
-    italic: 'for the larger rooms.',
+    tagline: 'ENTERPRISE',
     blurb: 'Studios, agencies, and companies past 100 people. We tailor the edges.',
     price: { custom: true, label: "Let's talk" },
     cta: { label: 'Contact sales', href: '#beta' },
@@ -66,32 +66,30 @@ export function Pricing() {
 
   return (
     <section id="pricing" className="relative mx-auto max-w-[1240px] px-6 py-28 md:px-10">
-      {/* Heading */}
       <div className="grid items-end gap-8 md:grid-cols-12">
         <div className="md:col-span-7">
           <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-(--color-ink-mute)">
-            (09) — Pricing
+            // SEC.09 · pricing
           </div>
-          <h2 className="mt-4 font-display text-[44px] leading-[1] tracking-tight text-(--color-ink) md:text-[60px]">
-            Fair, <em className="font-display italic text-(--color-violet)">flat</em> prices.
-            <br className="hidden sm:block" />
+          <h2 className="mt-4 font-display text-[40px] font-medium leading-[1] tracking-[-0.03em] text-(--color-ink) md:text-[56px]">
+            Fair, <span className="text-(--color-violet)">flat</span> prices.<br />
             <span className="text-(--color-ink-mute)">No </span>
-            <em className="font-display italic text-(--color-coral)">tiers within tiers.</em>
+            <span className="text-(--color-coral)">tiers within tiers.</span>
           </h2>
         </div>
         <div className="md:col-span-5">
-          <p className="text-[15px] leading-[1.6] text-(--color-ink-soft)">
+          <p className="text-[14.5px] leading-[1.6] text-(--color-ink-soft)">
             Three plans, in plain words. The free one is real — the kind of free you can run a
             small team on for years. No seat minimums, no contact-us-for-pricing maze. Cancel
             with a tap.
           </p>
           {/* Toggle */}
-          <div className="mt-6 inline-flex items-center gap-1 rounded-full border border-(--color-paper-line) bg-(--color-paper) p-1 font-mono text-[10px] uppercase tracking-[0.18em]">
+          <div className="mt-6 inline-flex items-center gap-0 border border-(--color-paper-edge) bg-(--color-paper-shadow) p-1 font-mono text-[10px] uppercase tracking-[0.18em]">
             {(['annual', 'monthly'] as const).map((opt) => (
               <button
                 key={opt}
                 onClick={() => setBilling(opt)}
-                className={`rounded-full px-4 py-2 transition-colors ${
+                className={`px-4 py-2 transition-colors ${
                   billing === opt
                     ? 'bg-(--color-ink) text-(--color-paper)'
                     : 'text-(--color-ink-soft) hover:text-(--color-ink)'
@@ -109,22 +107,21 @@ export function Pricing() {
         </div>
       </div>
 
-      {/* Cards */}
-      <div className="mt-14 grid gap-5 md:grid-cols-3">
+      <div className="mt-14 grid gap-px border border-(--color-paper-line) bg-(--color-paper-line) md:grid-cols-3">
         {plans.map((p) => (
           <PlanCard key={p.name} plan={p} billing={billing} />
         ))}
       </div>
 
       {/* Slack comparison ribbon */}
-      <div className="mt-12 overflow-hidden rounded-(--radius-card) border border-(--color-paper-line) bg-(--color-paper-shadow)/50">
-        <div className="grid items-center gap-6 px-6 py-6 md:grid-cols-12 md:px-9 md:py-7">
+      <div className="mt-12 overflow-hidden border border-(--color-paper-edge) bg-(--color-paper-shadow)">
+        <div className="grid items-center gap-6 px-6 py-7 md:grid-cols-12 md:px-9">
           <div className="md:col-span-5">
             <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-(--color-ink-mute)">
-              For the asking
+              // benchmark
             </div>
-            <div className="mt-2 font-display text-[24px] leading-tight md:text-[28px]">
-              How does this look <em className="font-display italic text-(--color-coral)">next to Slack?</em>
+            <div className="mt-2 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] md:text-[28px]">
+              How does this look <span className="text-(--color-coral)">next to Slack?</span>
             </div>
           </div>
           <div className="grid grid-cols-3 gap-4 md:col-span-7 md:gap-6">
@@ -148,34 +145,35 @@ function PlanCard({ plan, billing }: { plan: Plan; billing: 'annual' | 'monthly'
 
   return (
     <article
-      className={`relative flex flex-col overflow-hidden rounded-(--radius-card) border p-7 md:p-8 ${
+      className={`relative flex flex-col p-7 md:p-8 ${
         dark
-          ? 'border-(--color-ink) bg-(--color-ink) text-(--color-paper) shadow-[0_30px_70px_-35px_rgba(26,24,20,0.6)]'
-          : 'border-(--color-paper-line) bg-(--color-paper)'
+          ? 'text-(--color-paper)'
+          : 'bg-(--color-paper) text-(--color-ink)'
       }`}
+      style={dark ? { background: 'linear-gradient(180deg, #F4F4F4 0%, #C8C8C8 100%)' } : undefined}
     >
       {plan.ribbon && (
-        <div className={`absolute right-5 top-5 rounded-full px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.18em] ${
-          dark ? 'bg-(--color-amber) text-(--color-ink)' : 'bg-(--color-coral) text-(--color-paper)'
+        <div className={`absolute right-5 top-5 px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.18em] ${
+          dark ? 'bg-(--color-paper) text-(--color-amber)' : 'bg-(--color-coral) text-(--color-paper)'
         }`}>
           {plan.ribbon}
         </div>
       )}
 
-      <div className="flex items-baseline gap-2">
-        <div className="font-display text-[26px] leading-none">{plan.name}</div>
-        <div className={`font-display text-[18px] italic ${dark ? 'text-(--color-violet-soft)' : 'text-(--color-violet)'}`}>
-          — {plan.italic}
-        </div>
+      <div className={`font-mono text-[10px] uppercase tracking-[0.22em] ${dark ? 'text-(--color-paper)/60' : 'text-(--color-ink-mute)'}`}>
+        // {plan.tagline}
       </div>
 
-      <p className={`mt-3 text-[13.5px] leading-[1.55] ${dark ? 'text-(--color-paper)/70' : 'text-(--color-ink-soft)'}`}>
+      <div className="mt-3 flex items-baseline gap-3">
+        <div className="font-display text-[28px] font-medium leading-none tracking-[-0.02em]">{plan.name}</div>
+      </div>
+
+      <p className={`mt-3 text-[13px] leading-[1.55] ${dark ? 'text-(--color-paper)/70' : 'text-(--color-ink-soft)'}`}>
         {plan.blurb}
       </p>
 
-      {/* Price block */}
-      <div className={`mt-6 flex items-baseline gap-2 border-t pt-6 ${dark ? 'border-(--color-paper)/12' : 'border-(--color-paper-line)'}`}>
-        <div className="font-display text-[52px] leading-none tracking-tight">
+      <div className={`mt-6 flex items-baseline gap-2 border-t pt-6 ${dark ? 'border-(--color-paper)/15' : 'border-(--color-paper-line)'}`}>
+        <div className="font-display text-[52px] font-medium leading-none tracking-[-0.04em]">
           {priceStr}
         </div>
         <div className={`flex flex-col font-mono text-[10px] uppercase tracking-[0.14em] ${
@@ -199,14 +197,13 @@ function PlanCard({ plan, billing }: { plan: Plan; billing: 'annual' | 'monthly'
         </div>
       )}
 
-      {/* Features */}
-      <ul className="mt-7 space-y-2.5 text-[13.5px]">
+      <ul className="mt-7 space-y-2.5 text-[13px]">
         {plan.features.map((f) => (
           <li key={f} className="flex items-start gap-3">
             <span
               aria-hidden
-              className={`mt-[7px] inline-block h-[6px] w-[6px] shrink-0 rounded-full ${
-                dark ? 'bg-(--color-amber)' : 'bg-(--color-violet)'
+              className={`mt-[6px] inline-block h-[5px] w-[5px] shrink-0 ${
+                dark ? 'bg-(--color-paper)' : 'bg-(--color-violet)'
               }`}
             />
             <span className={dark ? 'text-(--color-paper)/90' : 'text-(--color-ink-soft)'}>{f}</span>
@@ -216,13 +213,12 @@ function PlanCard({ plan, billing }: { plan: Plan; billing: 'annual' | 'monthly'
 
       <div className="flex-1" />
 
-      {/* CTA */}
       <a
         href={plan.cta.href}
-        className={`mt-8 inline-flex items-center justify-between rounded-full px-5 py-3.5 font-mono text-[11px] uppercase tracking-[0.18em] transition-transform hover:-translate-y-[1px] ${
+        className={`mt-8 inline-flex items-center justify-between border px-5 py-3.5 font-mono text-[11px] uppercase tracking-[0.18em] transition-colors ${
           dark
-            ? 'bg-(--color-paper) text-(--color-ink)'
-            : 'border border-(--color-ink) text-(--color-ink) hover:bg-(--color-ink) hover:text-(--color-paper)'
+            ? 'border-(--color-paper) bg-(--color-paper) text-(--color-ink) hover:bg-transparent hover:text-(--color-paper)'
+            : 'border-(--color-ink) text-(--color-ink) hover:bg-(--color-ink) hover:text-(--color-paper)'
         }`}
       >
         {plan.cta.label}
@@ -234,14 +230,14 @@ function PlanCard({ plan, billing }: { plan: Plan; billing: 'annual' | 'monthly'
 
 function Compare({ label, us, them, themLabel }: { label: string; us: string; them: string; themLabel: string }) {
   return (
-    <div>
+    <div className="border-l border-(--color-paper-line) pl-4 first:border-l-0 first:pl-0">
       <div className="font-mono text-[9.5px] uppercase tracking-[0.16em] text-(--color-ink-mute)">{label}</div>
       <div className="mt-2 flex items-baseline gap-2">
-        <div className="font-display text-[26px] leading-none text-(--color-ink)">{us}</div>
+        <div className="font-display text-[24px] font-medium leading-none tracking-[-0.02em] text-(--color-ink)">{us}</div>
         <div className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-(--color-violet)">Span</div>
       </div>
       <div className="mt-1 flex items-baseline gap-2">
-        <div className="font-display text-[16px] leading-none text-(--color-ink-mute) line-through decoration-(--color-coral)/70">
+        <div className="font-display text-[15px] font-medium leading-none text-(--color-ink-mute) line-through decoration-(--color-coral)/70">
           {them}
         </div>
         <div className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-(--color-ink-mute)">{themLabel}</div>
