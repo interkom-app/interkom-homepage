@@ -1,7 +1,6 @@
-# span-web
+# interkom-homepage
 
 Static landing page for **Interkom** — a private social network for your company.
-(Repo named `span-web` for historical reasons.)
 Built with Vite + React + TypeScript + Tailwind v4.
 
 ## Develop
@@ -19,7 +18,7 @@ npm run preview
 ```
 
 The build uses a relative `base` (`./`), so it works whether GitHub Pages
-serves it from `username.github.io` or `username.github.io/span-web/`.
+serves it from `username.github.io` or `username.github.io/interkom-homepage/`.
 
 ## Deploy to GitHub Pages
 
