@@ -60,7 +60,7 @@ export function PhoneMock() {
                 </div>
                 <div>
                   <div className="font-display text-[14px] font-medium leading-none text-(--color-ink)">Lighthouse</div>
-                  <div className="font-mono text-[8.5px] uppercase tracking-[0.14em] text-(--color-ink-mute)">lighthouse.interkom.io</div>
+                  <div className="font-mono text-[8.5px] uppercase tracking-[0.14em] text-(--color-ink-mute)">lighthouse.interkom.app</div>
                 </div>
               </div>
               <div className="font-mono text-[16px] leading-none text-(--color-ink-soft)">⌥</div>

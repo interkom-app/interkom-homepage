@@ -25,7 +25,7 @@ const pillars: Pillar[] = [
     num: '04',
     title: 'A space that feels',
     accent: 'like a building.',
-    body: 'Each workspace gets its own home at slug.interkom.io — your people, your channels, your stories. Invite the team. Lock the door.',
+    body: 'Each workspace gets its own home at slug.interkom.app — your people, your channels, your stories. Invite the team. Lock the door.',
     visual: 'spaces',
   },
 ]

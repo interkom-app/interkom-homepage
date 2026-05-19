@@ -110,7 +110,7 @@ function WorkspaceCard({
         <div>
           <div className="font-display text-[17px] font-medium leading-none tracking-[-0.02em]">{name}</div>
           <div className="mt-1.5 font-mono text-[9px] uppercase tracking-[0.14em] text-(--color-ink-mute)">
-            {slug}.interkom.io
+            {slug}.interkom.app
           </div>
         </div>
       </div>

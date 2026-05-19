@@ -6,7 +6,7 @@ export function Identity() {
           <div className="relative h-[440px]">
             <IdentityCard
               workspace="Lighthouse"
-              slug="lighthouse.interkom.io"
+              slug="lighthouse.interkom.app"
               name="Maya Reyes"
               role="Engineering · she/her"
               handle="@maya"
@@ -17,7 +17,7 @@ export function Identity() {
             />
             <IdentityCard
               workspace="Field Notes"
-              slug="fieldnotes.interkom.io"
+              slug="fieldnotes.interkom.app"
               name="m."
               role="just here for the photos"
               handle="@mreyes"
@@ -28,7 +28,7 @@ export function Identity() {
             />
             <IdentityCard
               workspace="Atlas Studio"
-              slug="atlas-studio.interkom.io"
+              slug="atlas-studio.interkom.app"
               name="Maya R."
               role="Contract · weekends only"
               handle="@maya.r"

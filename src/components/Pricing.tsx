@@ -24,7 +24,7 @@ const plans: Plan[] = [
       'Up to 5 teammates',
       'Full message history — no 90-day wall',
       'Stories, channels & DMs',
-      'One workspace · yourname.interkom.io',
+      'One workspace · yourname.interkom.app',
       'iOS app, native from day one',
     ],
   },
