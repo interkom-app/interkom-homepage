@@ -13,11 +13,13 @@ import { BillingResult } from './components/BillingResult'
 
 export default function App() {
   // Stripe Checkout returns to /billing?billing=success|cancelled.
+  // Only an explicit `success` shows the success page — anything else
+  // (cancelled, an unexpected value, or none) is treated as not-paid.
   if (window.location.pathname.replace(/\/$/, '') === '/billing') {
     const status =
-      new URLSearchParams(window.location.search).get('billing') === 'cancelled'
-        ? 'cancelled'
-        : 'success'
+      new URLSearchParams(window.location.search).get('billing') === 'success'
+        ? 'success'
+        : 'cancelled'
     return <BillingResult status={status} />
   }
 
