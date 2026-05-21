@@ -6,7 +6,7 @@ type Platform = {
   pitch: string
   spec: string
   icon: IconKind
-  cta: { label: string; href: string }
+  cta: { label: string; href: string; glyph: 'apple' | 'globe' }
 }
 
 // TODO: swap the `#` hrefs for the real App Store listing, the macOS
@@ -18,7 +18,7 @@ const platforms: Platform[] = [
     pitch: 'Built in Swift, not a web view in a costume. 60fps lists, real haptics, widgets, and the share sheet.',
     spec: 'SwiftUI · iOS 17+',
     icon: 'ios',
-    cta: { label: 'App Store', href: '#' },
+    cta: { label: 'Download on the App Store', href: '#', glyph: 'apple' },
   },
   {
     label: 'macOS',
@@ -26,7 +26,7 @@ const platforms: Platform[] = [
     pitch: 'Menu-bar presence, multiple windows, every ⌘ shortcut you reach for. Universal binary, tuned for Apple silicon.',
     spec: 'SwiftUI · Apple silicon',
     icon: 'mac',
-    cta: { label: 'Download for Mac', href: '#' },
+    cta: { label: 'Download for Mac', href: '#', glyph: 'apple' },
   },
   {
     label: 'Web',
@@ -34,7 +34,7 @@ const platforms: Platform[] = [
     pitch: 'Nothing to install, nothing to update. Cold-starts in under a second and keeps every keyboard shortcut.',
     spec: 'Instant · no download',
     icon: 'web',
-    cta: { label: 'Open in browser', href: '#' },
+    cta: { label: 'Open in your browser', href: '#', glyph: 'globe' },
   },
 ]
 
@@ -84,22 +84,25 @@ export function Apps() {
             <p className="mt-3 flex-1 text-[13.5px] leading-[1.6] text-(--color-ink-soft)">
               {p.pitch}
             </p>
-            <div className="mt-6 flex items-center justify-between gap-3 border-t border-(--color-paper-line) pt-4">
-              <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-(--color-ink-mute)">
-                {p.spec}
-              </span>
+            <div className="mt-6 border-t border-(--color-paper-line) pt-5">
               <a
                 href={p.cta.href}
-                className="group/cta inline-flex shrink-0 items-center gap-1.5 border border-(--color-ink) px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-(--color-ink) transition-colors hover:bg-(--color-ink) hover:text-(--color-paper)"
+                className="group/cta flex items-center gap-3 bg-(--color-ink) px-4 py-3 text-(--color-paper) transition-colors hover:bg-(--color-violet)"
               >
-                {p.cta.label}
+                <BrandGlyph kind={p.cta.glyph} />
+                <span className="font-mono text-[11px] uppercase tracking-[0.14em]">
+                  {p.cta.label}
+                </span>
                 <span
                   aria-hidden
-                  className="transition-transform group-hover/cta:translate-x-0.5"
+                  className="ml-auto transition-transform group-hover/cta:translate-x-1"
                 >
                   →
                 </span>
               </a>
+              <div className="mt-3 font-mono text-[9.5px] uppercase tracking-[0.16em] text-(--color-ink-mute)">
+                {p.spec}
+              </div>
             </div>
           </article>
         ))}
@@ -145,6 +148,31 @@ export function Apps() {
         ))}
       </div>
     </section>
+  )
+}
+
+function BrandGlyph({ kind }: { kind: 'apple' | 'globe' }) {
+  if (kind === 'apple') {
+    return (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+        <path d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.1-2.01-3.77-2.04-1.6-.16-3.13.94-3.94.94-.82 0-2.07-.92-3.41-.9-1.75.03-3.37 1.02-4.27 2.59-1.83 3.17-.47 7.86 1.31 10.43.87 1.26 1.91 2.67 3.27 2.62 1.31-.05 1.81-.85 3.39-.85 1.58 0 2.03.85 3.41.82 1.41-.02 2.3-1.28 3.16-2.55.99-1.46 1.4-2.87 1.42-2.94-.03-.01-2.73-1.05-2.76-4.16zM14.46 4.46c.72-.88 1.21-2.1 1.08-3.32-1.04.04-2.31.69-3.06 1.56-.66.77-1.24 2.01-1.09 3.19 1.16.09 2.35-.59 3.07-1.43z" />
+      </svg>
+    )
+  }
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      aria-hidden
+    >
+      <circle cx="12" cy="12" r="9" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <path d="M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18" />
+    </svg>
   )
 }
 
