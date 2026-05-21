@@ -12,11 +12,13 @@ import { Footer } from './components/Footer'
 import { BillingResult } from './components/BillingResult'
 
 export default function App() {
-  // Stripe Checkout returns here with ?billing=success|cancelled. Keyed
-  // off the query string so it works on the bare origin — no router.
-  const billing = new URLSearchParams(window.location.search).get('billing')
-  if (billing === 'success' || billing === 'cancelled') {
-    return <BillingResult status={billing} />
+  // Stripe Checkout returns to /billing?billing=success|cancelled.
+  if (window.location.pathname.replace(/\/$/, '') === '/billing') {
+    const status =
+      new URLSearchParams(window.location.search).get('billing') === 'cancelled'
+        ? 'cancelled'
+        : 'success'
+    return <BillingResult status={status} />
   }
 
   return (
