@@ -38,7 +38,7 @@ export function Nav() {
           className="reveal group inline-flex items-center gap-2 border border-(--color-ink) bg-(--color-ink) px-4 py-2 font-mono text-[11px] uppercase tracking-[0.16em] text-(--color-paper) transition-colors hover:bg-(--color-paper) hover:text-(--color-ink)"
           style={{ animationDelay: '380ms' }}
         >
-          Start free
+          Download
           <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
         </a>
       </div>

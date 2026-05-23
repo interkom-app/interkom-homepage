@@ -38,7 +38,7 @@ export function Hero() {
               href="#apps"
               className="group inline-flex items-center gap-3 border border-(--color-ink) bg-(--color-ink) px-5 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-(--color-paper) transition-colors hover:bg-(--color-paper) hover:text-(--color-ink)"
             >
-              Start free
+              Download
               <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
             </a>
             <a

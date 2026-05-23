@@ -34,6 +34,10 @@ html, body, #root {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  /* Decorative absolutely-positioned cards (Identity, Workspaces) can
+     extend past narrow viewports — clip them at the edge instead of
+     letting the page scroll horizontally. */
+  overflow-x: clip;
 }
 
 /* Dot-grid backdrop — echoes the app icon's sensor pattern */
