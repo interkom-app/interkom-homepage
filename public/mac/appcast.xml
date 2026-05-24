@@ -16,6 +16,18 @@
         -->
 
         <item>
+            <title>Interkom 1.1.0</title>
+            <pubDate>Sun, 24 May 2026 20:22:13 +0000</pubDate>
+            <sparkle:version>202605242219</sparkle:version>
+            <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <enclosure
+                url="https://github.com/interkom-app/interkom-releases/releases/download/v1.1.0/Interkom-1.1.0.dmg"
+                type="application/octet-stream"
+                sparkle:edSignature="oR0WvASjgUSU+13I31ws0TdOa6Uh0jt2hjmzqxJVQ6I5MWripKaAIko+BBY0POVZIRXEC4x1CUWa7FT+7yNnCQ==" length="10514983" />
+        </item>
+
+        <item>
             <title>Interkom 1.0.1</title>
             <pubDate>Sun, 24 May 2026 14:27:04 +0000</pubDate>
             <sparkle:version>202605241624</sparkle:version>
