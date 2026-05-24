@@ -9,8 +9,12 @@ type Platform = {
   cta: { label: string; href: string; glyph: 'apple' | 'globe' }
 }
 
-// TODO: swap the remaining `#` hrefs for the real App Store listing
-// and the macOS .dmg download once they're live. The web app is live.
+// TODO: swap the iOS `#` href for the real App Store listing once it's
+// live. macOS points at GitHub Releases' "latest" redirect — Sparkle
+// handles in-app updates after first install.
+const MAC_DOWNLOAD_URL =
+  'https://github.com/interkom-app/interkom-mac/releases/latest/download/Interkom.dmg'
+
 const platforms: Platform[] = [
   {
     label: 'iOS',
@@ -26,7 +30,7 @@ const platforms: Platform[] = [
     pitch: 'Menu-bar presence, multiple windows, every ⌘ shortcut you reach for. Universal binary, tuned for Apple silicon.',
     spec: 'SwiftUI · Apple silicon',
     icon: 'mac',
-    cta: { label: 'Download for Mac', href: '#', glyph: 'apple' },
+    cta: { label: 'Download for Mac', href: MAC_DOWNLOAD_URL, glyph: 'apple' },
   },
   {
     label: 'Web',

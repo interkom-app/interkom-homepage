@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>Interkom for macOS</title>
+        <link>https://interkom.app/mac/appcast.xml</link>
+        <description>Native Mac app updates for Interkom.</description>
+        <language>en</language>
+
+        <!--
+        Each release adds a new <item>. The release script
+        (`./scripts/release.sh X.Y.Z` in interkom-mac) prints the exact
+        block to paste here, including the Sparkle EdDSA signature and
+        DMG byte length. Newest item goes on top.
+        -->
+
+        <item>
+            <title>Interkom 1.0.0</title>
+            <pubDate>Sun, 24 May 2026 14:10:06 +0000</pubDate>
+            <sparkle:version>202605241607</sparkle:version>
+            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <enclosure
+                url="https://github.com/interkom-app/interkom-mac/releases/download/v1.0.0/Interkom-1.0.0.dmg"
+                type="application/octet-stream"
+                sparkle:edSignature="iJxq+BeEsm9OTIJexhHLSeXVcvDz27c4lNbJDfeZcWnB+0s5KXHryYFSa4GJOb2bmfI7jBnA7yVF4PjIiPkUCg==" length="10360560" />
+        </item>
+
+    </channel>
+</rss>
