@@ -3,11 +3,16 @@ import { Wordmark } from './Wordmark'
 export function Nav() {
   return (
     <header className="relative z-20 mx-auto flex max-w-[1240px] items-center justify-between px-6 py-6 md:px-10 md:py-7">
-      <a href="#top" className="reveal text-(--color-ink)" style={{ animationDelay: '40ms' }}>
+      <a
+        href="#top"
+        aria-label="Interkom — back to top"
+        className="reveal text-(--color-ink)"
+        style={{ animationDelay: '40ms' }}
+      >
         <Wordmark size="md" />
       </a>
 
-      <nav className="hidden items-center gap-9 md:flex">
+      <nav aria-label="Primary" className="hidden items-center gap-9 md:flex">
         {[
           ['Product', '#product'],
           ['Stories', '#stories'],

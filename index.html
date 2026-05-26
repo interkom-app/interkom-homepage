@@ -2,23 +2,120 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0A0A0A" />
     <meta name="color-scheme" content="dark" />
-    <title>INTERKOM // Private social network. Company-scoped.</title>
-    <meta name="description" content="Interkom is a private social network for your company. Chat, stories, channels, presence — workspace-scoped, no public feed." />
 
-    <meta property="og:title" content="INTERKOM // private social network for your company" />
-    <meta property="og:description" content="Chat, stories, channels, presence — workspace-scoped, no public feed." />
+    <title>Interkom — A private social network for your company</title>
+    <meta
+      name="description"
+      content="Interkom is a private social network for your company — chat, stories, channels, presence and voice notes, workspace-scoped with no public feed. Native iOS and macOS apps, web everywhere."
+    />
+    <meta
+      name="keywords"
+      content="private social network, team chat, company messenger, workspace chat, internal communication, team stories, Slack alternative, secure messaging, channels, native iOS chat, macOS chat app"
+    />
+    <meta name="author" content="Interkom Labs" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+
+    <link rel="canonical" href="https://interkom.app/" />
+
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="apple-touch-icon" href="./icon.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Interkom" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://interkom.app/" />
+    <meta property="og:title" content="Interkom — A private social network for your company" />
+    <meta
+      property="og:description"
+      content="Chat, stories, channels, presence and voice notes — workspace-scoped, no public feed. Native iOS and macOS apps, plus the web."
+    />
+    <meta property="og:image" content="https://interkom.app/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Interkom — a private social network for your company" />
 
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Interkom — A private social network for your company" />
+    <meta
+      name="twitter:description"
+      content="Chat, stories, channels, presence — workspace-scoped, no public feed. Native iOS, macOS, and web."
+    />
+    <meta name="twitter:image" content="https://interkom.app/og-image.png" />
+    <meta name="twitter:image:alt" content="Interkom — a private social network for your company" />
+
+    <!-- Performance hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Structured data: Organization + SoftwareApplication + WebSite -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://interkom.app/#organization",
+            "name": "Interkom Labs",
+            "url": "https://interkom.app/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://interkom.app/icon.png",
+              "width": 256,
+              "height": 256
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://interkom.app/#website",
+            "url": "https://interkom.app/",
+            "name": "Interkom",
+            "description": "A private social network for your company.",
+            "publisher": { "@id": "https://interkom.app/#organization" },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://interkom.app/#app",
+            "name": "Interkom",
+            "applicationCategory": "CommunicationApplication",
+            "operatingSystem": "iOS, macOS, Web",
+            "description": "A private social network for your company — chat, stories, channels, presence and voice notes, workspace-scoped with no public feed.",
+            "url": "https://interkom.app/",
+            "image": "https://interkom.app/og-image.png",
+            "publisher": { "@id": "https://interkom.app/#organization" },
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Solo",
+                "price": "0",
+                "priceCurrency": "USD",
+                "description": "Free for up to 5 teammates, full history, all features."
+              },
+              {
+                "@type": "Offer",
+                "name": "Team",
+                "price": "5",
+                "priceCurrency": "USD",
+                "description": "$5 per teammate per month, billed yearly. Unlimited teammates and workspaces."
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

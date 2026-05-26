@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /billing
+
+Sitemap: https://interkom.app/sitemap.xml

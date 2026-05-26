@@ -1,3 +1,5 @@
+import { useDocumentMeta } from '../useDocumentMeta'
+
 type Props = {
   status: 'success' | 'cancelled'
 }
@@ -9,6 +11,14 @@ type Props = {
  */
 export function BillingResult({ status }: Props) {
   const success = status === 'success'
+
+  useDocumentMeta({
+    title: success ? "You're on Team — Interkom" : 'Checkout cancelled — Interkom',
+    description: success
+      ? 'Your Interkom workspace is on the Team plan.'
+      : 'Your Interkom checkout was cancelled — no charge was made.',
+    robots: 'noindex, nofollow',
+  })
 
   return (
     <main className="relative isolate flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">

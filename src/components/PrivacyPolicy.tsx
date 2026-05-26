@@ -1,3 +1,5 @@
+import { useDocumentMeta } from '../useDocumentMeta'
+
 type Section = {
   title: string
   paragraphs?: string[]
@@ -116,6 +118,14 @@ const sections: Section[] = [
 ]
 
 export function PrivacyPolicy() {
+  useDocumentMeta({
+    title: 'Privacy Policy — Interkom',
+    description:
+      'How Interkom collects, uses, and protects your data. Plain words, effective ' + EFFECTIVE + '.',
+    canonical: 'https://interkom.app/privacy',
+    ogUrl: 'https://interkom.app/privacy',
+  })
+
   return (
     <div className="relative isolate min-h-screen">
       <header className="mx-auto max-w-[1240px] px-6 pt-8 md:px-10">

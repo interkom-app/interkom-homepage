@@ -33,15 +33,17 @@ export default function App() {
   return (
     <div className="relative isolate min-h-screen">
       <Nav />
-      <Hero />
-      <Marquee />
-      <Pillars />
-      <Stories />
-      <Workspaces />
-      <Identity />
-      <Notes />
-      <Apps />
-      <Pricing />
+      <main>
+        <Hero />
+        <Marquee />
+        <Pillars />
+        <Stories />
+        <Workspaces />
+        <Identity />
+        <Notes />
+        <Apps />
+        <Pricing />
+      </main>
       <Footer />
     </div>
   )
