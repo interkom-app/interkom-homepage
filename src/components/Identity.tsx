@@ -42,7 +42,7 @@ export function Identity() {
 
         <div className="md:col-span-6 order-1 md:order-2">
           <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-(--color-ink-mute)">
-            // SEC.07 · per-workspace profiles
+            // SEC.08 · per-workspace profiles
           </div>
           <h2 className="mt-4 font-display text-[40px] font-medium leading-[1] tracking-[-0.03em] md:text-[60px]">
             A different <span className="text-(--color-violet)">you</span><br />

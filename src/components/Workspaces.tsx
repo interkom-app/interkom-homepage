@@ -14,7 +14,7 @@ export function Workspaces() {
         <div className="relative grid items-center gap-12 md:grid-cols-12">
           <div className="md:col-span-7">
             <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-(--color-ink-mute)">
-              // SEC.06 · workspaces
+              // SEC.07 · workspaces
             </div>
             <h2 className="mt-5 font-display text-[40px] font-medium leading-[1] tracking-[-0.03em] md:text-[56px]">
               Your team gets <span className="text-(--color-violet)">an address.</span>

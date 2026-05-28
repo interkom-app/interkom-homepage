@@ -39,9 +39,9 @@ export default function App() {
         <Marquee />
         <Pillars />
         <Stories />
+        <Encryption />
         <Workspaces />
         <Identity />
-        <Encryption />
         <Notes />
         <Apps />
         <Pricing />

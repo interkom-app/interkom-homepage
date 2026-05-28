@@ -18,7 +18,7 @@ export function Encryption() {
           {/* Left: copy */}
           <div className="md:col-span-5">
             <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-(--color-ink-mute)">
-              // SEC.08 · end-to-end encryption
+              // SEC.06 · end-to-end encryption
             </div>
             <h2 className="mt-5 font-display text-[40px] font-medium leading-[1] tracking-[-0.03em] md:text-[60px]">
               Only the people in the room
