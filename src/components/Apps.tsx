@@ -54,7 +54,7 @@ export function Apps() {
       <div className="grid items-end gap-10 md:grid-cols-12">
         <div className="md:col-span-7">
           <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-(--color-ink-mute)">
-            // SEC.09 · apps
+            // SEC.10 · apps
           </div>
           <h2 className="mt-4 font-display text-[40px] font-medium leading-[1] tracking-[-0.03em] md:text-[56px]">
             Native everywhere.<br />

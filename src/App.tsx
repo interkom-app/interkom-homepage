@@ -5,6 +5,7 @@ import { Pillars } from './components/Pillars'
 import { Stories } from './components/Stories'
 import { Workspaces } from './components/Workspaces'
 import { Identity } from './components/Identity'
+import { Encryption } from './components/Encryption'
 import { Notes } from './components/Notes'
 import { Apps } from './components/Apps'
 import { Pricing } from './components/Pricing'
@@ -40,6 +41,7 @@ export default function App() {
         <Stories />
         <Workspaces />
         <Identity />
+        <Encryption />
         <Notes />
         <Apps />
         <Pricing />
