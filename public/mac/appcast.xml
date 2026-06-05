@@ -21,6 +21,20 @@
             <sparkle:version>202606051701</sparkle:version>
             <sparkle:shortVersionString>1.3.7</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>Interkom for macOS 1.3.7</h2>
+                <p><strong>Rich text in messages</strong> — a formatting toolbar in the composer: bold, italic, underline, strikethrough, inline code, plus bulleted / numbered lists and code blocks. Format as you type.</p>
+                <p><strong>Choose your chat layout</strong> — switch between Bubbles (classic) and Compact (Slack-style: avatars on the left, every message its own row) in Preferences. Your choice syncs across your devices.</p>
+                <p><strong>Simpler attachments</strong> — the photo / file / mic buttons are now a single + menu (Photo, File, Voice message).</p>
+                <p><strong>Calls</strong> — incoming calls now ring with a looping tone while the call window is up.</p>
+                <p><strong>Also</strong></p>
+                <ul>
+                    <li>Larger, more readable UI text and bigger chat-sidebar avatars</li>
+                    <li>Wider navigation rail with bigger items</li>
+                    <li>New chats open their conversation pane immediately</li>
+                    <li>Signing up now sets up your first workspace automatically</li>
+                </ul>
+            ]]></description>
             <enclosure
                 url="https://github.com/interkom-app/interkom-releases/releases/download/v1.3.7/Interkom-1.3.7.dmg"
                 type="application/octet-stream"
