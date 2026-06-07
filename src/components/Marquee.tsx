@@ -1,5 +1,7 @@
 export function Marquee() {
   const items = [
+    'Slack alternative',
+    '//',
     'team chat',
     '//',
     'stories',

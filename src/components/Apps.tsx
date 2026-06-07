@@ -9,11 +9,12 @@ type Platform = {
   cta: { label: string; href: string; glyph: 'apple' | 'globe' }
 }
 
-// TODO: swap the iOS `#` href for the real App Store listing once it's
-// live. macOS points at GitHub Releases' "latest" redirect — Sparkle
-// handles in-app updates after first install.
+// macOS points at GitHub Releases' "latest" redirect — Sparkle handles
+// in-app updates after first install. iOS is the live App Store listing.
 const MAC_DOWNLOAD_URL =
   'https://github.com/interkom-app/interkom-releases/releases/latest/download/Interkom.dmg'
+const IOS_APP_STORE_URL =
+  'https://apps.apple.com/us/app/interkom/id6771735965'
 
 const platforms: Platform[] = [
   {
@@ -22,7 +23,7 @@ const platforms: Platform[] = [
     pitch: 'Built in Swift, not a web view in a costume. 60fps lists, real haptics, widgets, and the share sheet.',
     spec: 'SwiftUI · iOS 17+',
     icon: 'ios',
-    cta: { label: 'Download on the App Store', href: '#', glyph: 'apple' },
+    cta: { label: 'Download on the App Store', href: IOS_APP_STORE_URL, glyph: 'apple' },
   },
   {
     label: 'macOS',
