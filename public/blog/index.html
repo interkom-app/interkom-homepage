@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta name="color-scheme" content="dark" />
+
+  <title>Blog — Interkom</title>
+  <meta name="description" content="Writing from Interkom Labs on private team communication, calmer messaging, and building a Slack alternative your company actually owns." />
+  <link rel="canonical" href="https://interkom.app/blog" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Interkom" />
+  <meta property="og:url" content="https://interkom.app/blog" />
+  <meta property="og:title" content="Blog — Interkom" />
+  <meta property="og:description" content="Writing on private team communication and building a Slack alternative your company actually owns." />
+  <meta property="og:image" content="https://interkom.app/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog — Interkom" />
+  <meta name="twitter:description" content="Writing on private team communication and building a Slack alternative your company actually owns." />
+  <meta name="twitter:image" content="https://interkom.app/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --paper:#0A0A0A; --paper-shadow:#121212; --line:#1F1F1F; --edge:#2A2A2A;
+      --ink:#F4F4F4; --soft:#A3A3A3; --mute:#6A6A6A; --violet:#7E76FF; --cyan:#4677FE;
+      --sans:"Geist",system-ui,sans-serif; --mono:"Geist Mono",ui-monospace,monospace;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;
+      -webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+    header.site{display:flex;align-items:center;justify-content:space-between;
+      padding:26px 0;border-bottom:1px solid var(--line)}
+    .word{font-weight:600;letter-spacing:-0.02em;font-size:18px;text-decoration:none}
+    .word .dot{color:var(--violet)}
+    nav.site a{font-family:var(--mono);font-size:11px;text-transform:uppercase;
+      letter-spacing:.16em;color:var(--soft);text-decoration:none;margin-left:28px}
+    nav.site a:hover{color:var(--ink)}
+    .eyebrow{font-family:var(--mono);font-size:11px;text-transform:uppercase;
+      letter-spacing:.22em;color:var(--mute)}
+    h1.title{font-weight:600;letter-spacing:-0.03em;font-size:clamp(34px,6vw,56px);
+      line-height:1.02;margin:18px 0 0}
+    .lede{color:var(--soft);font-size:18px;max-width:46rem;margin-top:18px}
+    .posts{margin:54px 0 0;border-top:1px solid var(--line)}
+    .post{display:block;text-decoration:none;padding:30px 0;border-bottom:1px solid var(--line);
+      transition:opacity .15s}
+    .post:hover{opacity:.78}
+    .post .meta{font-family:var(--mono);font-size:11px;text-transform:uppercase;
+      letter-spacing:.16em;color:var(--mute)}
+    .post h2{font-weight:600;letter-spacing:-0.02em;font-size:26px;margin:10px 0 8px}
+    .post p{color:var(--soft);font-size:15.5px;max-width:48rem}
+    .post .more{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:11px;
+      text-transform:uppercase;letter-spacing:.16em;color:var(--violet)}
+    footer.site{margin:70px 0 40px;padding-top:26px;border-top:1px solid var(--line);
+      display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;
+      font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--mute)}
+    footer.site a{color:var(--mute);text-decoration:none}
+    footer.site a:hover{color:var(--ink)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="word" href="/">interkom<span class="dot">.</span></a>
+      <nav class="site" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/#apps">Apps</a>
+        <a href="https://web.interkom.app/sign-in">Sign in</a>
+      </nav>
+    </header>
+
+    <main>
+      <div style="padding:64px 0 8px">
+        <div class="eyebrow">// Interkom blog</div>
+        <h1 class="title">Notes on calmer,<br>private team chat.</h1>
+        <p class="lede">Writing from Interkom Labs on private team communication, end-to-end
+          encryption, and building a Slack alternative your company actually owns.</p>
+      </div>
+
+      <div class="posts">
+        <a class="post" href="/blog/slack-alternative">
+          <div class="meta">Guide · 7 June 2026 · 8 min read</div>
+          <h2>A private Slack alternative: what to look for (and why teams switch)</h2>
+          <p>Cost creep, channel noise, and where your messages actually live. A practical guide
+            to choosing a Slack alternative in 2026 — and how Interkom approaches it.</p>
+          <span class="more">Read the guide →</span>
+        </a>
+      </div>
+    </main>
+
+    <footer class="site">
+      <span>© 2026 Interkom Labs</span>
+      <span>
+        <a href="/">interkom.app</a> &nbsp;·&nbsp;
+        <a href="/privacy">Privacy</a> &nbsp;·&nbsp;
+        <a href="mailto:sales@interkom.app">Contact</a>
+      </span>
+    </footer>
+  </div>
+</body>
+</html>

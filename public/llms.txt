@@ -15,6 +15,8 @@ Interkom is built by Interkom Labs. Each company runs its own workspace at its o
 ## Pages
 
 - [Home](https://interkom.app/): product overview — chat, stories, channels, encryption, workspaces, pricing
+- [Blog](https://interkom.app/blog): writing on private team communication and Slack alternatives
+- [A private Slack alternative: what to look for in 2026](https://interkom.app/blog/slack-alternative): guide to choosing a Slack alternative + how Interkom compares
 - [Web app](https://web.interkom.app/sign-in): sign in to the Interkom web app
 - [Privacy Policy](https://interkom.app/privacy): what Interkom collects, why, and your choices
 

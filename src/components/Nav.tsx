@@ -18,6 +18,7 @@ export function Nav() {
           ['Stories', '#stories'],
           ['Workspaces', '#workspaces'],
           ['Pricing', '#pricing'],
+          ['Blog', '/blog'],
         ].map(([label, href], i) => (
           <a
             key={label}
