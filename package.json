@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite-react-ssg build && cp dist/index.html dist/404.html && mkdir -p dist/privacy && cp dist/index.html dist/privacy/index.html",
+    "build": "tsc -b && vite-react-ssg build && cp dist/index.html dist/404.html && cp dist/index.html dist/privacy.html",
     "preview": "vite preview"
   },
   "dependencies": {
