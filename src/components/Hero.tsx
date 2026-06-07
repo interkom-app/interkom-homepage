@@ -6,6 +6,12 @@ export function Hero() {
       <div className="grid items-start gap-14 md:grid-cols-12 md:gap-10">
         {/* Headline column */}
         <div className="md:col-span-7">
+          <div
+            className="reveal-slow mb-5 font-mono text-[11px] uppercase tracking-[0.22em] text-(--color-ink-mute)"
+            style={{ animationDelay: '60ms' }}
+          >
+            The private Slack alternative
+          </div>
           <h1
             className="reveal-slow font-display text-[44px] font-medium leading-[0.96] tracking-[-0.035em] text-(--color-ink) sm:text-[58px] md:text-[76px] lg:text-[92px]"
             style={{ animationDelay: '120ms' }}
@@ -28,9 +34,10 @@ export function Hero() {
             className="reveal mt-10 max-w-[36rem] text-[16px] leading-[1.55] text-(--color-ink-soft) md:text-[17px]"
             style={{ animationDelay: '440ms' }}
           >
-            Interkom is a social network you run inside your company — chat, stories, channels, and
-            the people behind them. It's quietly alive: presence, typing, reactions, voice
-            notes. No public feed. No strangers. Workspace-scoped, end-to-end.
+            Interkom is the private Slack alternative — a social network you run inside your
+            company: chat, stories, channels, and the people behind them. It's quietly alive:
+            presence, typing, reactions, voice notes. No public feed. No strangers.
+            Workspace-scoped, end-to-end.
           </p>
 
           <div className="reveal mt-10 flex flex-wrap items-center gap-3" style={{ animationDelay: '560ms' }}>

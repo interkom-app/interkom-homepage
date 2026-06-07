@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { Marquee } from './components/Marquee'
@@ -14,7 +15,15 @@ import { BillingResult } from './components/BillingResult'
 import { PrivacyPolicy } from './components/PrivacyPolicy'
 
 export default function App() {
-  const path = window.location.pathname.replace(/\/$/, '')
+  // The homepage is pre-rendered at build time, where there is no
+  // `window`. Start every first paint on the homepage ('') so the
+  // hydrated DOM matches the pre-rendered HTML, then resolve the real
+  // path after mount. Secondary routes (/privacy, /billing) are served
+  // the pre-rendered index.html shell and swap in on this effect.
+  const [path, setPath] = useState('')
+  useEffect(() => {
+    setPath(window.location.pathname.replace(/\/$/, ''))
+  }, [])
 
   // Stripe Checkout returns to /billing?billing=success|cancelled.
   // Only an explicit `success` shows the success page — anything else

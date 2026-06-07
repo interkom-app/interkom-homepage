@@ -1,0 +1,24 @@
+# Interkom
+
+> Interkom is a private Slack alternative — a social network for your company. It brings team chat, channels, 24-hour stories, presence, reactions and voice notes into one workspace-scoped space with no public feed and no strangers. Messages and files are end-to-end encrypted. Native iOS and macOS apps, plus the web.
+
+Interkom is built by Interkom Labs. Each company runs its own workspace at its own URL, with a separate profile per workspace. It is designed as a calmer, more private alternative to Slack and other team-chat tools.
+
+## Key facts
+
+- Category: team communication / business messaging (a private Slack alternative)
+- Core features: team chat (channels, DMs, rooms), 24-hour team stories, presence and typing indicators, reactions, voice notes
+- Privacy: workspace-scoped with no public feed; end-to-end encryption for messages and files
+- Platforms: native iOS, native macOS, and web (any browser)
+- Pricing: free for up to 5 teammates; Team plan at $5 per teammate per month (billed yearly) for unlimited teammates and workspaces
+
+## Pages
+
+- [Home](https://interkom.app/): product overview — chat, stories, channels, encryption, workspaces, pricing
+- [Web app](https://web.interkom.app/sign-in): sign in to the Interkom web app
+- [Privacy Policy](https://interkom.app/privacy): what Interkom collects, why, and your choices
+
+## Apps
+
+- [iOS — App Store](https://apps.apple.com/us/app/interkom/id6771735965)
+- [macOS — download](https://github.com/interkom-app/interkom-releases/releases/latest/download/Interkom.dmg)
