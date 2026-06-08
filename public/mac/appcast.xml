@@ -16,6 +16,22 @@
         -->
 
         <item>
+            <title>Interkom 1.4.1</title>
+            <pubDate>Mon, 08 Jun 2026 08:04:38 +0000</pubDate>
+            <sparkle:version>202606081001</sparkle:version>
+            <sparkle:shortVersionString>1.4.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h2>Interkom for macOS 1.4.1</h2>
+                <p>A small maintenance release — behind-the-scenes infrastructure and reliability improvements, plus slightly refined navigation-rail icons. No action needed; sign in as usual.</p>
+            ]]></description>
+            <enclosure
+                url="https://github.com/interkom-app/interkom-releases/releases/download/v1.4.1/Interkom-1.4.1.dmg"
+                type="application/octet-stream"
+                sparkle:edSignature="DWBx2KBr+EyC494OxUVqSDrs9eoykppeHsuNQ0t+p+X5DLtXak/Y158+WBTq4hVMR8d50ETTwzzsfW/s01yAAA==" length="25761197" />
+        </item>
+
+        <item>
             <title>Interkom 1.4.0</title>
             <pubDate>Sat, 06 Jun 2026 08:52:56 +0000</pubDate>
             <sparkle:version>202606061049</sparkle:version>
