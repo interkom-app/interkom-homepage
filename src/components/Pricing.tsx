@@ -69,7 +69,7 @@ export function Pricing() {
       <div className="grid items-end gap-8 md:grid-cols-12">
         <div className="md:col-span-7">
           <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-(--color-ink-mute)">
-            // SEC.11 · pricing
+            // SEC.12 · pricing
           </div>
           <h2 className="mt-4 font-display text-[40px] font-medium leading-[1] tracking-[-0.03em] text-(--color-ink) md:text-[56px]">
             Fair, <span className="text-(--color-violet)">flat</span> prices.<br />

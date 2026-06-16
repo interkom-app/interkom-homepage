@@ -7,7 +7,7 @@ Interkom is built by Interkom Labs. Each company runs its own workspace at its o
 ## Key facts
 
 - Category: team communication / business messaging (a private Slack alternative)
-- Core features: team chat (channels, DMs, rooms), 24-hour team stories, presence and typing indicators, reactions, voice notes
+- Core features: team chat (channels, DMs, rooms), 24-hour team stories, presence and typing indicators, reactions, voice notes, audio & video calls with screen sharing
 - Privacy: workspace-scoped with no public feed; end-to-end encryption for messages and files
 - Platforms: native iOS, native macOS, and web (any browser)
 - Pricing: free for up to 5 teammates; Team plan at $5 per teammate per month (billed yearly) for unlimited teammates and workspaces

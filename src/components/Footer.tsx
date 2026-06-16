@@ -13,6 +13,7 @@ const columns: { heading: string; links: Link[] }[] = [
       { label: 'Stories', href: '#stories' },
       { label: 'Workspaces', href: '#workspaces' },
       { label: 'Identity', href: '#identity' },
+      { label: 'Calls', href: '#calls' },
       { label: 'Encryption', href: '#encryption' },
     ],
   },
